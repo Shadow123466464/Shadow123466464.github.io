@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Endless Love ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="fireworks"></canvas>
+
+<h1>Three Letters. Endless Love 💖</h1>
+<p class="subtitle">Click… slowly</p>
+
+<div class="envelopes">
+  <div class="envelope" onclick="openEnvelope(0)">
+    <div class="flap"></div>
+    <div class="letter">I</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(1)">
+    <div class="flap"></div>
+    <div class="letter">❤</div>
+  </div>
+
+  <div class="envelope" onclick="openEnvelope(2)">
+    <div class="flap"></div>
+    <div class="letter">U</div>
+  </div>
+</div>
+
+<div class="modal" id="letterModal">
+  <div class="paper">
+    <p id="letterText"></p>
+    <button onclick="nextScene()">Next 💖</button>
+  </div>
+</div>
+
+<div class="final-scene" id="finalScene">
+  <div class="heart-tree" id="heartTree"></div>
+  <h2 class="final-text">This love keeps growing… because it’s you ❤️</h2>
+  <button class="return-btn" onclick="resetExperience()">Return 💌</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
