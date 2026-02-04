@@ -1,47 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Endless Love ❤️</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<canvas id="fireworks"></canvas>
-
-<h1>Three Letters. Endless Love 💖</h1>
-<p class="subtitle">Click… slowly</p>
-
-<div class="envelopes">
-  <div class="envelope" onclick="openEnvelope(0)">
-    <div class="flap"></div>
-    <div class="letter">I</div>
-  </div>
-
-  <div class="envelope" onclick="openEnvelope(1)">
-    <div class="flap"></div>
-    <div class="letter">❤</div>
-  </div>
-
-  <div class="envelope" onclick="openEnvelope(2)">
-    <div class="flap"></div>
-    <div class="letter">U</div>
-  </div>
-</div>
-
-<div class="modal" id="letterModal">
-  <div class="paper">
-    <p id="letterText"></p>
-    <button onclick="nextScene()">Next 💖</button>
-  </div>
-</div>
-
-<div class="final-scene" id="finalScene">
-  <div class="heart-tree" id="heartTree"></div>
-  <h2 class="final-text">This love keeps growing… because it’s you ❤️</h2>
-  <button class="return-btn" onclick="resetExperience()">Return 💌</button>
-</div>
-
-<script src="script.js"></script>
+    <div class="background-decorations">
+        <div class="heart-decoration heart-1">♥</div>
+        <div class="heart-decoration heart-2">♥</div>
+        <div class="heart-decoration heart-3">♥</div>
+        <div class="heart-decoration heart-4">♥</div>
+        <div class="heart-decoration heart-5">♥</div>
+    </div>
+    <div class="galaxy-animation"></div>
+    <div class="container">
+        <h1>Love Letters <i class="heart-icon fas fa-heart"></i></h1>
+        <p class="subtitle">Open a letter each day for a dose of love and encouragement</p>
+        <div class="envelopes" id="envelopes"></div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="paper" id="paper"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
