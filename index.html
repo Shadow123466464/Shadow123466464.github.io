@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-decorations">
+    <div class="heart-decoration heart-1">❤️</div>
+    <div class="heart-decoration heart-2">❤️</div>
+    <div class="heart-decoration heart-3">❤️</div>
+    <div class="heart-decoration heart-4">❤️</div>
+    <div class="heart-decoration heart-5">❤️</div>
+  </div>
+
+  <div class="container">
+    <h1>
+      Love Letters
+      <span class="heart-icon">❤️</span>
+    </h1>
+    <p class="subtitle">Open a letter when you feel the world is heavy and remember <span style="color: #ff6b81;">there is someone is ready to create this for you</span></p>
+
+    <div class="envelopes"></div>
+  </div>
+
+  <div class="modal" id="letterModal">
+    <div class="paper">
+      <div id="letterContent"></div>
+      <button id="closeModal">
+        <i class="fas fa-heart"></i> Close
+      </button>
+    </div>
+  </div>
+
+  <div class="secret-letter-button" id="secretLetterButton">For You</div>
+
+  <div class="secret-letter-modal" id="secretLetterModal">
+    <div class="secret-letter-content">
+      <div class="secret-letter-text" id="secretLetterText"></div>
+      <button class="return-button" id="returnButton">Return</button>
+    </div>
+  </div>
+
+  <div class="galaxy-animation"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
