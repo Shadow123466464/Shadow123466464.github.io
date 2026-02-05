@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const secretLetterContent = `
         This Page is created by Baheeddine Dahen to the one girl he loved more than anything but couldn't be with Azza Chouikh 
-        in this message i want to explain the idea of this creation it's letters in envelops applied on a fonction to change that allows 
+        in this message i want to explain the idea of this creation it's letters in envelops contains a fonction that allows 
         the number to be the same as the current month and everytime you refresh the letters changes also
         do including the special background every letter can have one of the 31 special effects randomly also there is one letter selected
         randomly everyday everytime you refresh or open the page it appears it's a daily selection.
