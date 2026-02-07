@@ -328,8 +328,8 @@ document.addEventListener('DOMContentLoaded', function() {
         also there is one letter selected randomly everyday, everytime you refresh or open the page it appears it's a daily selection.
         And for the reason i did that for because sometimes life can be hard and we can feel tired of everything and 
         when you do feel like that you can open and read some to always remember that im here with you 
-        and ill do everything i could to make you smile or to prove how special you are for me and how much you meant because in that time i was alone without i lost myself
-        and i lost the joy of everything like the life became tasteless without you being around to give it colors and brighten my day with your presence in it
+        and ill do everything i could to make you smile or to prove how special you are for me and how much you meant because in that time i was alone without you i lost myself
+        and i lost the joy of everything like the life became tasteless without you being around to give it colors and brighten my day with your presence
         and because i was never good with words i want you to see this and know how much i care about you to create this.
         For you and only you`;
 
@@ -359,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
     createEnvelopes();
     createGalaxyAnimation();
 });
+
 
 
 
