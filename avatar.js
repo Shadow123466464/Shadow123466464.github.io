@@ -56,7 +56,7 @@ function renderAvatar(containerId, config, size, animate) {
     var animalType = config.animalType || 'cat';
 
     var avatar = document.createElement('div');
-    avatar.className = 'animal-avatar ' + sizeClass + ' ' + gender;
+    avatar.className = 'animal-avatar ' + sizeClass + ' ' + gender + ' ' + animalType;
     if (animate) {
         avatar.classList.add('animated');
     }
@@ -223,7 +223,7 @@ function generateSpecialFeatures(animalType, furColor, gender) {
             return '<div class="panda-eye-patches"><div class="eye-patch left"></div><div class="eye-patch right"></div></div>';
         case 'lion':
             if (gender === 'male' || gender === 'boy') {
-                return '<div class="lion-mane" style="background:' + darkFur + '"></div>';
+                return '<div class="lion-mane" style="--mane-color:' + darkFur + ';--mane-dark:' + darkenColor(furColor, 35) + ';--mane-light:' + lightenColor(furColor, 12) + '"></div>';
             }
             return '';
         default:
@@ -257,7 +257,7 @@ function generateAccessory(accessory, color, gender) {
         case 'bow':
             return '<div class="animal-head-accessory bow" style="--accessory-color:' + color + '"></div>';
         case 'flower':
-            return '<div class="animal-head-accessory flower">🌸</div>';
+            return '<div class="animal-head-accessory flower" style="--accessory-color:' + color + '"></div>';
         case 'crown':
             return '<div class="animal-head-accessory crown"></div>';
         case 'tiara':
@@ -575,7 +575,8 @@ function checkIfAzza(firstName, lastName, gender) {
     var first = (firstName || '').toLowerCase().trim();
     var last = (lastName || '').toLowerCase().trim();
     var isFemaleGender = gender === 'female';
-    return first === 'azza' && last === 'chouikh' && isFemaleGender;
+    var isAzzaName = (first === 'azza' && last === 'chouikh') || (first === 'chouikh' && last === 'azza');
+    return isAzzaName && isFemaleGender;
 }
 
 function isChangingToAzza(oldFirst, oldLast, oldGender, newFirst, newLast, newGender) {

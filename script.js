@@ -14,6 +14,71 @@ function initMainContent() {
         return new Date(year, month + 1, 0).getDate();
     }
 
+    function getLetterKey(letter) {
+        return letter && letter.message ? letter.message.toLowerCase().trim() : '';
+    }
+
+    function cloneLetter(letter) {
+        var copy = {};
+        for (var key in letter) {
+            if (Object.prototype.hasOwnProperty.call(letter, key)) {
+                copy[key] = letter[key];
+            }
+        }
+        return copy;
+    }
+
+    function addRandomBackground(letter) {
+        var copy = cloneLetter(letter);
+        var randomBgIndex = Math.floor(Math.random() * backgrounds.length);
+        copy.bg = backgrounds[randomBgIndex];
+        return copy;
+    }
+
+    function shuffleLetters(letters) {
+        var shuffled = letters.slice();
+        for (var i = shuffled.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = temp;
+        }
+        return shuffled;
+    }
+
+    function getStoredTodayLetter(todayKey) {
+        var storedTodayLetter = localStorage.getItem('todayLetter_' + todayKey);
+        if (!storedTodayLetter) return null;
+
+        try {
+            var letter = JSON.parse(storedTodayLetter);
+            return getLetterKey(letter) ? letter : null;
+        } catch (e) {
+            localStorage.removeItem('todayLetter_' + todayKey);
+            return null;
+        }
+    }
+
+    function getUniqueLetterPool(reservedLetter) {
+        var seen = {};
+        var pool = [];
+        var reservedKey = getLetterKey(reservedLetter);
+
+        if (reservedKey) {
+            seen[reservedKey] = true;
+        }
+
+        for (var i = 0; i < allLoveWords.length; i++) {
+            var key = getLetterKey(allLoveWords[i]);
+            if (key && !seen[key]) {
+                seen[key] = true;
+                pool.push(allLoveWords[i]);
+            }
+        }
+
+        return shuffleLetters(pool);
+    }
+
     function isAzzaProfile() {
         var saved = localStorage.getItem('userProfile');
         if (!saved) return false;
@@ -22,7 +87,7 @@ function initMainContent() {
             var profile = JSON.parse(saved);
             var first = profile && profile.firstName ? profile.firstName.toLowerCase().trim() : '';
             var last = profile && profile.lastName ? profile.lastName.toLowerCase().trim() : '';
-            return first === 'azza' && last === 'chouikh';
+            return (first === 'azza' && last === 'chouikh') || (first === 'chouikh' && last === 'azza');
         } catch (e) {
             return false;
         }
@@ -46,12 +111,12 @@ function updateSecretButtonVisibility() {
         var month = now.getMonth();
         var year = now.getFullYear();
         var daysInMonth = getDaysInMonth(month, year);
+        var today = now.getDate();
+        var todayKey = now.toISOString().split('T')[0];
+        var todayLetter = getStoredTodayLetter(todayKey);
+        var shuffledLetters = getUniqueLetterPool(todayLetter);
 
         envelopesContainer.innerHTML = '';
-
-        var shuffledLetters = allLoveWords.slice().sort(function() {
-            return 0.5 - Math.random();
-        });
 
         for (var i = 1; i <= daysInMonth; i++) {
             var envelope = document.createElement('div');
@@ -59,9 +124,18 @@ function updateSecretButtonVisibility() {
             envelope.innerHTML = '<div class="flap"></div><div class="letter">❤️</div>';
             envelope.dataset.day = i;
 
-            var letter = shuffledLetters[(i - 1) % shuffledLetters.length];
-            var randomBgIndex = Math.floor(Math.random() * backgrounds.length);
-            letter.bg = backgrounds[randomBgIndex];
+            var sourceLetter;
+            if (todayLetter && i === today) {
+                sourceLetter = todayLetter;
+            } else {
+                sourceLetter = shuffledLetters.shift();
+            }
+
+            if (!sourceLetter) {
+                sourceLetter = allLoveWords[(i - 1) % allLoveWords.length];
+            }
+
+            var letter = sourceLetter.bg ? cloneLetter(sourceLetter) : addRandomBackground(sourceLetter);
             envelope.dataset.letter = JSON.stringify(letter);
 
             (function(env, dayNum) {
@@ -83,39 +157,21 @@ function updateSecretButtonVisibility() {
             envelopesContainer.appendChild(envelope);
         }
 
-        showTodaysLetter();
+        showTodaysLetter(todayKey);
     }
 
-    function showTodaysLetter() {
+    function showTodaysLetter(todayKey) {
         var today = new Date().getDate();
-        var todayKey = new Date().toISOString().split('T')[0];
-        var storedTodayLetter = localStorage.getItem('todayLetter_' + todayKey);
+        var todayEnvelope = document.querySelector('.envelope[data-day="' + today + '"]');
+        if (!todayEnvelope) return;
 
-        if (storedTodayLetter) {
-            var letter = JSON.parse(storedTodayLetter);
-            openLetter(letter, today);
-            var todayEnvelope = document.querySelector('.envelope[data-day="' + today + '"]');
-            if (todayEnvelope) {
-                todayEnvelope.classList.add('open');
-                currentOpenEnvelope = todayEnvelope;
-            }
-        } else {
-            var randomIndex = Math.floor(Math.random() * allLoveWords.length);
-            var selectedLetter = {};
-            for (var key in allLoveWords[randomIndex]) {
-                selectedLetter[key] = allLoveWords[randomIndex][key];
-            }
-            var randomBgIndex = Math.floor(Math.random() * backgrounds.length);
-            selectedLetter.bg = backgrounds[randomBgIndex];
+        var letter = JSON.parse(todayEnvelope.dataset.letter);
+        localStorage.setItem('todayLetter_' + todayKey, JSON.stringify(letter));
+        openLetter(letter, today);
 
-            localStorage.setItem('todayLetter_' + todayKey, JSON.stringify(selectedLetter));
-            openLetter(selectedLetter, today);
-
-            var todayEnvelope = document.querySelector('.envelope[data-day="' + today + '"]');
-            if (todayEnvelope) {
-                todayEnvelope.classList.add('open');
-                currentOpenEnvelope = todayEnvelope;
-            }
+        if (todayEnvelope) {
+            todayEnvelope.classList.add('open');
+            currentOpenEnvelope = todayEnvelope;
         }
     }
 

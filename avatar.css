@@ -40,6 +40,14 @@
     align-items: center;
 }
 
+.animal-avatar.female .animal-face {
+    box-shadow: inset 0 8px 14px rgba(255, 255, 255, 0.18), inset 0 -10px 16px rgba(80, 43, 28, 0.08);
+}
+
+.animal-avatar.male .animal-face {
+    box-shadow: inset 0 7px 12px rgba(255, 255, 255, 0.12), inset 0 -12px 18px rgba(45, 24, 16, 0.12);
+}
+
 .animal-avatar.mini {
     width: 50px;
     height: 75px;
@@ -73,11 +81,77 @@
     overflow: visible;
 }
 
+.animal-face::after {
+    content: '';
+    position: absolute;
+    width: 56px;
+    height: 26px;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 1;
+    pointer-events: none;
+}
 .animal-face.capybara {
     width: 100px;
     height: 90px;
     border-radius: 48% 48% 45% 45%;
     top: 25px;
+}
+
+.animal-face.dog::before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 42px;
+    top: 8px;
+    left: 8px;
+    border-radius: 55% 45% 58% 42%;
+    background: rgba(80, 43, 28, 0.18);
+    transform: rotate(-18deg);
+    z-index: 2;
+}
+
+.animal-face.fox::before {
+    content: '';
+    position: absolute;
+    width: 74px;
+    height: 46px;
+    left: 50%;
+    bottom: 4px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.36);
+    clip-path: polygon(0 20%, 28% 0, 50% 28%, 72% 0, 100% 20%, 76% 100%, 24% 100%);
+    border-radius: 0 0 42px 42px;
+    z-index: 2;
+}
+
+.animal-face.wolf::before {
+    content: '';
+    position: absolute;
+    width: 54px;
+    height: 48px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.18);
+    clip-path: polygon(50% 0, 68% 40%, 100% 18%, 77% 74%, 50% 100%, 23% 74%, 0 18%, 32% 40%);
+    z-index: 2;
+}
+
+.animal-face.lion::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 44px;
+    left: 50%;
+    bottom: 3px;
+    transform: translateX(-50%);
+    background: rgba(255, 239, 190, 0.22);
+    border-radius: 44% 44% 55% 55%;
+    z-index: 2;
 }
 
 .animal-body-container {
@@ -325,13 +399,52 @@
 
 .lion-mane {
     position: absolute;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    top: -5px;
+    width: 142px;
+    height: 138px;
+    border-radius: 48% 52% 50% 50%;
+    top: -9px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
+    background:
+        radial-gradient(circle at 50% 50%, var(--mane-light, #d7a64f) 0 38%, transparent 39%),
+        repeating-conic-gradient(from -8deg, var(--mane-dark, #8b5a1e) 0deg 12deg, var(--mane-color, #b3762a) 12deg 24deg);
+    clip-path: polygon(50% 0%, 58% 9%, 69% 2%, 74% 15%, 88% 12%, 86% 27%, 100% 35%, 89% 47%, 98% 60%, 83% 67%, 86% 83%, 70% 82%, 62% 98%, 50% 88%, 38% 98%, 30% 82%, 14% 83%, 17% 67%, 2% 60%, 11% 47%, 0% 35%, 14% 27%, 12% 12%, 26% 15%, 31% 2%, 42% 9%);
+    box-shadow: 0 8px 18px rgba(89, 50, 18, 0.16);
+}
+
+.lion-mane::before {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0 45%, rgba(0, 0, 0, 0.06) 68%, transparent 70%);
+}
+
+.animal-avatar.male.lion .animal-face.lion {
+    top: 24px;
+    box-shadow: inset 0 8px 14px rgba(255, 255, 255, 0.14), inset 0 -12px 18px rgba(60, 34, 18, 0.12);
+}
+
+.animal-avatar.female.lion .animal-face.lion {
+    width: 104px;
+    height: 96px;
+    top: 22px;
+    border-radius: 48% 48% 52% 52%;
+}
+
+.animal-avatar.female.lion .animal-ears.lion .ear {
+    width: 28px;
+    height: 28px;
+    top: 12px;
+}
+
+.animal-avatar.female.lion .animal-ears.lion .ear.left {
+    left: 6px;
+}
+
+.animal-avatar.female.lion .animal-ears.lion .ear.right {
+    right: 6px;
 }
 
 .animal-avatar.female .lion-mane {
@@ -461,6 +574,31 @@
     display: flex;
     gap: 20px;
     z-index: 15;
+}
+
+.animal-avatar.male .animal-eyes-container::before,
+.animal-avatar.male .animal-eyes-container::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    top: -8px;
+    background: rgba(45, 24, 16, 0.78);
+    border-radius: 999px;
+}
+
+.animal-avatar.male .animal-eyes-container::before {
+    left: -1px;
+    transform: rotate(-10deg);
+}
+
+.animal-avatar.male .animal-eyes-container::after {
+    right: -1px;
+    transform: rotate(10deg);
+}
+
+.animal-avatar.female .animal-eye {
+    box-shadow: 0 2px 4px rgba(45, 24, 16, 0.12);
 }
 
 .animal-eyes-container.capybara {
@@ -975,13 +1113,15 @@
 .animal-head-accessory {
     position: absolute;
     z-index: 30;
+    pointer-events: none;
+    transform-origin: center bottom;
 }
 
 .animal-head-accessory.bow {
     width: 30px;
     height: 20px;
-    top: 14px;
-    right: 2px;
+    top: 23px;
+    right: 9px;
 }
 
 .animal-head-accessory.bow::before {
@@ -1009,18 +1149,34 @@
 }
 
 .animal-head-accessory.flower {
-    width: 30px;
-    height: 30px;
-    top: 12px;
-    right: 6px;
-    font-size: 24px;
-    line-height: 1;
+    width: 28px;
+    height: 28px;
+    top: 20px;
+    right: 10px;
+}
+
+.animal-head-accessory.flower::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow:
+        0 -10px 0 var(--accessory-color, #ff6b81),
+        9px -4px 0 var(--accessory-color, #ff6b81),
+        7px 7px 0 var(--accessory-color, #ff6b81),
+        -7px 7px 0 var(--accessory-color, #ff6b81),
+        -9px -4px 0 var(--accessory-color, #ff6b81);
 }
 
 .animal-head-accessory.crown {
     width: 50px;
     height: 30px;
-    top: 2px;
+    top: 13px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1049,7 +1205,7 @@
 .animal-head-accessory.tiara {
     width: 60px;
     height: 25px;
-    top: 6px;
+    top: 17px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1079,7 +1235,7 @@
 .animal-head-accessory.hat {
     width: 60px;
     height: 35px;
-    top: 2px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--accessory-color, #8B4513);
@@ -1104,7 +1260,7 @@
     height: 32px;
     background: var(--accessory-color, #3b82f6);
     border-radius: 50% 50% 0 0;
-    top: 6px;
+    top: 13px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1126,7 +1282,7 @@
     height: 40px;
     background: var(--accessory-color, #6366f1);
     border-radius: 50% 50% 0 0;
-    top: -2px;
+    top: 8px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1149,7 +1305,7 @@
     height: 10px;
     background: var(--accessory-color, #ff6b81);
     border-radius: 5px;
-    top: 14px;
+    top: 28px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1215,7 +1371,7 @@
 .animal-head-accessory.horns {
     width: 80px;
     height: 35px;
-    top: -10px;
+    top: 2px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1264,7 +1420,7 @@
 .animal-head-accessory.helmet {
     width: 75px;
     height: 50px;
-    top: -2px;
+    top: 9px;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, #9ca3af 0%, #6b7280 50%, #4b5563 100%);
@@ -1299,7 +1455,7 @@
 .animal-head-accessory.witch-hat {
     width: 70px;
     height: 60px;
-    top: -20px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1331,7 +1487,7 @@
 .animal-head-accessory.wizard-hat {
     width: 70px;
     height: 60px;
-    top: -20px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1363,7 +1519,7 @@
 .animal-head-accessory.santa-hat {
     width: 70px;
     height: 50px;
-    top: -6px;
+    top: 5px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1393,7 +1549,7 @@
 .animal-head-accessory.party-hat {
     width: 50px;
     height: 50px;
-    top: -14px;
+    top: -2px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1411,12 +1567,47 @@
 }
 
 .animal-head-accessory.party-hat::after {
-    content: '✨';
+    content: '';
     position: absolute;
-    font-size: 12px;
-    top: -5px;
+    width: 7px;
+    height: 7px;
+    top: -4px;
     left: 50%;
     transform: translateX(-50%);
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: -8px 7px 0 #60a5fa, 8px 8px 0 #f472b6;
+}
+.animal-avatar.lion.male .animal-head-accessory.crown,
+.animal-avatar.lion.male .animal-head-accessory.tiara,
+.animal-avatar.lion.male .animal-head-accessory.hat,
+.animal-avatar.lion.male .animal-head-accessory.cap,
+.animal-avatar.lion.male .animal-head-accessory.beanie,
+.animal-avatar.lion.male .animal-head-accessory.helmet {
+    top: 2px;
+}
+
+.animal-avatar.lion.male .animal-head-accessory.headband {
+    top: 20px;
+}
+
+.animal-avatar.rabbit .animal-head-accessory.bow,
+.animal-avatar.rabbit .animal-head-accessory.flower {
+    top: 28px;
+}
+
+.animal-avatar.capybara .animal-head-accessory.bow,
+.animal-avatar.capybara .animal-head-accessory.flower {
+    top: 32px;
+}
+
+.animal-avatar.capybara .animal-head-accessory.crown,
+.animal-avatar.capybara .animal-head-accessory.tiara,
+.animal-avatar.capybara .animal-head-accessory.hat,
+.animal-avatar.capybara .animal-head-accessory.cap,
+.animal-avatar.capybara .animal-head-accessory.beanie,
+.animal-avatar.capybara .animal-head-accessory.helmet {
+    top: 22px;
 }
 
 .animal-body.casual.male {
@@ -3405,6 +3596,237 @@
     clip-path: polygon(0% 100%, 15% 30%, 35% 100%, 50% 10%, 65% 100%, 85% 30%, 100% 100%);
     left: 0;
     top: 4px;
+}
+
+.accessory-icon.crown::after {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #ef4444;
+    border-radius: 50%;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.accessory-icon.bow::before,
+.accessory-icon.bow::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 5px;
+    background: #ff6b81;
+}
+
+.accessory-icon.bow::before {
+    left: 1px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+}
+
+.accessory-icon.bow::after {
+    right: 1px;
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(45deg);
+}
+
+.accessory-icon.flower::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow:
+        0 -9px 0 #ff8fab,
+        8px -4px 0 #ff8fab,
+        7px 7px 0 #ff8fab,
+        -7px 7px 0 #ff8fab,
+        -8px -4px 0 #ff8fab;
+}
+
+.accessory-icon.hat {
+    width: 42px;
+    height: 28px;
+}
+
+.accessory-icon.hat::before {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 22px;
+    left: 50%;
+    top: 1px;
+    transform: translateX(-50%);
+    background: #8b5cf6;
+    border-radius: 50% 50% 8px 8px;
+}
+
+.accessory-icon.hat::after {
+    content: '';
+    position: absolute;
+    width: 42px;
+    height: 8px;
+    left: 50%;
+    bottom: 3px;
+    transform: translateX(-50%);
+    background: #7c3aed;
+    border-radius: 50%;
+}
+
+.accessory-icon.cap {
+    width: 42px;
+    height: 28px;
+}
+
+.accessory-icon.cap::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 20px;
+    left: 3px;
+    top: 4px;
+    background: #3b82f6;
+    border-radius: 50% 50% 5px 5px;
+}
+
+.accessory-icon.cap::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    right: 0;
+    bottom: 5px;
+    background: #2563eb;
+    border-radius: 0 16px 16px 0;
+}
+
+.accessory-icon.headband::before {
+    content: '';
+    position: absolute;
+    width: 38px;
+    height: 9px;
+    left: 50%;
+    top: 9px;
+    transform: translateX(-50%);
+    background: #ff6b81;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 rgba(255, 107, 129, 0.18);
+}
+
+.glasses-icon {
+    width: 44px;
+    height: 24px;
+    margin: 8px auto 8px;
+    position: relative;
+}
+
+.glasses-icon::before,
+.glasses-icon::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    width: 17px;
+    height: 17px;
+    border: 3px solid #333;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.glasses-icon::before {
+    left: 0;
+}
+
+.glasses-icon::after {
+    right: 0;
+}
+
+.glasses-icon.round::before,
+.glasses-icon.round::after {
+    border-radius: 50%;
+}
+
+.glasses-icon.square::before,
+.glasses-icon.square::after {
+    border-radius: 4px;
+}
+
+.glasses-icon.sunglasses::before,
+.glasses-icon.sunglasses::after {
+    border-color: #111827;
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-radius: 6px;
+}
+
+.glasses-icon.round,
+.glasses-icon.square,
+.glasses-icon.sunglasses {
+    background: linear-gradient(#333, #333) center 10px / 10px 3px no-repeat;
+}
+
+.face-icon {
+    width: 44px;
+    height: 34px;
+    margin: 6px auto 7px;
+    position: relative;
+    border-radius: 50%;
+    background: #ffe4c4;
+}
+
+.face-icon::before,
+.face-icon::after {
+    content: '';
+    position: absolute;
+}
+
+.face-icon.blush::before,
+.face-icon.blush::after {
+    width: 13px;
+    height: 8px;
+    top: 18px;
+    background: rgba(255, 107, 129, 0.55);
+    border-radius: 50%;
+}
+
+.face-icon.blush::before {
+    left: 5px;
+}
+
+.face-icon.blush::after {
+    right: 5px;
+}
+
+.face-icon.freckles::before {
+    width: 4px;
+    height: 4px;
+    top: 17px;
+    left: 12px;
+    background: #8b5a2b;
+    border-radius: 50%;
+    box-shadow: 8px -2px 0 #8b5a2b, 16px 0 0 #8b5a2b, 4px 7px 0 #8b5a2b, 21px 6px 0 #8b5a2b;
+}
+
+.face-icon.whiskers::before,
+.face-icon.whiskers::after {
+    width: 18px;
+    height: 13px;
+    top: 17px;
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+}
+
+.face-icon.whiskers::before {
+    left: -3px;
+    transform: skewY(-12deg);
+}
+
+.face-icon.whiskers::after {
+    right: -3px;
+    transform: skewY(12deg);
 }
 
 .special-azza-overlay {
