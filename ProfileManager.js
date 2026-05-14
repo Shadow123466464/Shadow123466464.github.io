@@ -332,14 +332,14 @@ var ProfileManager = {
         style.id = styleId;
         style.textContent =
             ':root{--theme-color:' + color + ';}' +
-            '.step-btn.next-btn,.step-btn.finish-btn,.settings-save-btn,#closeModal,.continue-btn{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;}' +
+            '.step-btn.next-btn,.step-btn.finish-btn,.settings-save-btn,#closeModal{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;}' +
             '.profile-streak{color:' + color + ' !important;}' +
             '.settings-tab.active{color:' + color + ' !important;border-bottom-color:' + color + ' !important;}' +
             '.option-btn.selected,.scroll-option.selected{border-color:' + color + ' !important;background:' + color + ' !important;color:white !important;}' +
             '.option-card.selected{border-color:' + color + ' !important;background:rgba(255,107,129,0.08) !important;}' +
             '.form-group input:focus{border-color:' + color + ' !important;box-shadow:0 0 0 3px rgba(255,107,129,0.18) !important;}' +
             '.stat-value,.settings-header h2 i,.preview-heart{color:' + color + ' !important;}' +
-            '.preview-button,#secretLetterButton,#wordleReplayButton,.hint-btn{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;}';
+            '.preview-button,#secretLetterButton{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;}';
         document.head.appendChild(style);
     },
 

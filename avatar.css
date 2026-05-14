@@ -3250,16 +3250,18 @@
 
 .animal-body.knight .knight-sword {
     position: absolute;
-    top: -31px;
-    right: -17px;
+    top: -44px;
+    left: 50%;
+    right: auto;
     width: 12px;
-    height: 98px;
+    height: 112px;
     background: linear-gradient(90deg, #94a3b8 0%, #f8fafc 35%, #cbd5e1 62%, #64748b 100%);
     border: 1px solid #475569;
     border-radius: 8px 8px 3px 3px;
-    transform: rotate(38deg);
-    transform-origin: 50% 78%;
+    transform: translateX(-44%) rotate(-34deg);
+    transform-origin: 50% 88%;
     z-index: -1;
+    pointer-events: none;
     box-shadow: 0 2px 7px rgba(15, 23, 42, 0.35);
 }
 
@@ -4550,16 +4552,53 @@
 
 .special-azza-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100svh;
+    background:
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0 2px, transparent 2px 46px),
+        linear-gradient(120deg, #ffeaf0 0%, #fff6db 32%, #f0e8ff 66%, #e8fff5 100%);
+    background-size: auto, 180% 180%;
     z-index: 999999;
     display: none;
     justify-content: center;
     align-items: center;
     overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    isolation: isolate;
+}
+
+.special-azza-overlay::before,
+.special-azza-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.special-azza-overlay::before {
+    background:
+        linear-gradient(115deg, transparent 0 24%, rgba(255, 95, 126, 0.14) 24% 25%, transparent 25% 100%),
+        linear-gradient(65deg, transparent 0 58%, rgba(124, 58, 237, 0.1) 58% 59%, transparent 59% 100%);
+    background-size: 360px 360px, 420px 420px;
+    animation: specialAzzaPatternSlide 24s linear infinite;
+}
+
+.special-azza-overlay::after {
+    background:
+        linear-gradient(90deg, rgba(255, 95, 126, 0.12), transparent 18%, transparent 82%, rgba(35, 166, 125, 0.1)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.62), transparent 42%, rgba(255, 255, 255, 0.48));
+}
+
+@keyframes specialAzzaPatternSlide {
+    from {
+        background-position: 0 0, 0 0;
+    }
+    to {
+        background-position: 360px 360px, -420px 420px;
+    }
 }
 
 .special-azza-overlay.show {
@@ -4616,27 +4655,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 240, 246, 0.78) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 30px;
     padding: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 22px 60px rgba(99, 38, 70, 0.18), 0 8px 24px rgba(255, 95, 126, 0.14);
 }
 
 .special-azza-title {
     font-family: 'Dancing Script', cursive;
     font-size: 3.5rem;
-    color: #ff6b81;
+    color: #ff5f7e;
     margin-bottom: 20px;
-    text-shadow: 0 0 40px rgba(255, 107, 129, 0.6);
+    text-shadow: 0 8px 28px rgba(255, 95, 126, 0.32);
     animation: glowTitle 2s ease-in-out infinite;
 }
 
 @keyframes glowTitle {
     0%, 100% {
-        text-shadow: 0 0 30px rgba(255, 107, 129, 0.5), 0 0 60px rgba(255, 107, 129, 0.3);
+        text-shadow: 0 8px 28px rgba(255, 95, 126, 0.28), 0 0 54px rgba(255, 138, 160, 0.22);
     }
     50% {
-        text-shadow: 0 0 50px rgba(255, 107, 129, 0.8), 0 0 100px rgba(255, 107, 129, 0.5);
+        text-shadow: 0 10px 34px rgba(255, 95, 126, 0.42), 0 0 82px rgba(255, 138, 160, 0.3);
     }
 }
 
@@ -4684,17 +4724,19 @@
 .special-azza-message {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.15rem;
-    color: white;
+    color: #35152a;
     line-height: 2;
     margin-bottom: 35px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(255, 95, 126, 0.18);
     padding: 30px;
     border-radius: 20px;
+    box-shadow: 0 18px 46px rgba(99, 38, 70, 0.12);
 }
 
 .special-azza-close {
     padding: 18px 50px;
-    background: linear-gradient(135deg, #ff6b81 0%, #ff8e9e 100%);
+    background: linear-gradient(135deg, #ff5f7e 0%, #ff8aa0 100%);
     color: white;
     border: none;
     border-radius: 35px;
@@ -4703,12 +4745,12 @@
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(255, 107, 129, 0.4);
+    box-shadow: 0 10px 40px rgba(255, 95, 126, 0.32);
 }
 
 .special-azza-close:hover {
     transform: scale(1.08);
-    box-shadow: 0 15px 50px rgba(255, 107, 129, 0.6);
+    box-shadow: 0 15px 50px rgba(255, 95, 126, 0.42);
 }
 
 .flowers-container {
