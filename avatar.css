@@ -1176,7 +1176,7 @@
 .animal-head-accessory.crown {
     width: 50px;
     height: 30px;
-    top: 13px;
+    top: -1px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1205,7 +1205,7 @@
 .animal-head-accessory.tiara {
     width: 60px;
     height: 25px;
-    top: 17px;
+    top: 2px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1235,7 +1235,7 @@
 .animal-head-accessory.hat {
     width: 60px;
     height: 35px;
-    top: 10px;
+    top: -18px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--accessory-color, #8B4513);
@@ -1260,7 +1260,7 @@
     height: 32px;
     background: var(--accessory-color, #3b82f6);
     border-radius: 50% 50% 0 0;
-    top: 13px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1282,7 +1282,7 @@
     height: 40px;
     background: var(--accessory-color, #6366f1);
     border-radius: 50% 50% 0 0;
-    top: 8px;
+    top: -16px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1420,7 +1420,7 @@
 .animal-head-accessory.helmet {
     width: 75px;
     height: 50px;
-    top: 9px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, #9ca3af 0%, #6b7280 50%, #4b5563 100%);
@@ -1455,7 +1455,7 @@
 .animal-head-accessory.witch-hat {
     width: 70px;
     height: 60px;
-    top: -8px;
+    top: -38px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1487,7 +1487,7 @@
 .animal-head-accessory.wizard-hat {
     width: 70px;
     height: 60px;
-    top: -8px;
+    top: -38px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1519,7 +1519,7 @@
 .animal-head-accessory.santa-hat {
     width: 70px;
     height: 50px;
-    top: 5px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1549,7 +1549,7 @@
 .animal-head-accessory.party-hat {
     width: 50px;
     height: 50px;
-    top: -2px;
+    top: -28px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1578,14 +1578,12 @@
     border-radius: 50%;
     box-shadow: -8px 7px 0 #60a5fa, 8px 8px 0 #f472b6;
 }
-.animal-avatar.lion.male .animal-head-accessory.crown,
-.animal-avatar.lion.male .animal-head-accessory.tiara,
-.animal-avatar.lion.male .animal-head-accessory.hat,
-.animal-avatar.lion.male .animal-head-accessory.cap,
-.animal-avatar.lion.male .animal-head-accessory.beanie,
-.animal-avatar.lion.male .animal-head-accessory.helmet {
-    top: 2px;
-}
+.animal-avatar.lion.male .animal-head-accessory.crown { top: -5px; }
+.animal-avatar.lion.male .animal-head-accessory.tiara { top: -2px; }
+.animal-avatar.lion.male .animal-head-accessory.hat { top: -20px; }
+.animal-avatar.lion.male .animal-head-accessory.cap { top: -16px; }
+.animal-avatar.lion.male .animal-head-accessory.beanie { top: -18px; }
+.animal-avatar.lion.male .animal-head-accessory.helmet { top: -14px; }
 
 .animal-avatar.lion.male .animal-head-accessory.headband {
     top: 20px;
@@ -1601,14 +1599,12 @@
     top: 32px;
 }
 
-.animal-avatar.capybara .animal-head-accessory.crown,
-.animal-avatar.capybara .animal-head-accessory.tiara,
-.animal-avatar.capybara .animal-head-accessory.hat,
-.animal-avatar.capybara .animal-head-accessory.cap,
-.animal-avatar.capybara .animal-head-accessory.beanie,
-.animal-avatar.capybara .animal-head-accessory.helmet {
-    top: 22px;
-}
+.animal-avatar.capybara .animal-head-accessory.crown { top: 2px; }
+.animal-avatar.capybara .animal-head-accessory.tiara { top: 5px; }
+.animal-avatar.capybara .animal-head-accessory.hat { top: -14px; }
+.animal-avatar.capybara .animal-head-accessory.cap { top: -10px; }
+.animal-avatar.capybara .animal-head-accessory.beanie { top: -12px; }
+.animal-avatar.capybara .animal-head-accessory.helmet { top: -8px; }
 
 .animal-body.casual.male {
     width: 108px;
