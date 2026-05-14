@@ -67,6 +67,7 @@
     width: 110px;
     height: 120px;
     z-index: 10;
+    overflow: visible;
 }
 
 .animal-face {
@@ -1235,7 +1236,7 @@
 .animal-head-accessory.hat {
     width: 60px;
     height: 35px;
-    top: -18px;
+    top: -2px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--accessory-color, #8B4513);
@@ -1260,7 +1261,7 @@
     height: 32px;
     background: var(--accessory-color, #3b82f6);
     border-radius: 50% 50% 0 0;
-    top: -14px;
+    top: -5px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1282,7 +1283,7 @@
     height: 40px;
     background: var(--accessory-color, #6366f1);
     border-radius: 50% 50% 0 0;
-    top: -16px;
+    top: -6px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1455,7 +1456,7 @@
 .animal-head-accessory.witch-hat {
     width: 70px;
     height: 60px;
-    top: -38px;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1487,7 +1488,7 @@
 .animal-head-accessory.wizard-hat {
     width: 70px;
     height: 60px;
-    top: -38px;
+    top: -25px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1519,7 +1520,7 @@
 .animal-head-accessory.santa-hat {
     width: 70px;
     height: 50px;
-    top: -22px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1549,7 +1550,7 @@
 .animal-head-accessory.party-hat {
     width: 50px;
     height: 50px;
-    top: -28px;
+    top: -15px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1580,9 +1581,9 @@
 }
 .animal-avatar.lion.male .animal-head-accessory.crown { top: -5px; }
 .animal-avatar.lion.male .animal-head-accessory.tiara { top: -2px; }
-.animal-avatar.lion.male .animal-head-accessory.hat { top: -20px; }
-.animal-avatar.lion.male .animal-head-accessory.cap { top: -16px; }
-.animal-avatar.lion.male .animal-head-accessory.beanie { top: -18px; }
+    .animal-avatar.lion.male .animal-head-accessory.hat { top: -10px; }
+    .animal-avatar.lion.male .animal-head-accessory.cap { top: -6px; }
+    .animal-avatar.lion.male .animal-head-accessory.beanie { top: -8px; }
 .animal-avatar.lion.male .animal-head-accessory.helmet { top: -14px; }
 
 .animal-avatar.lion.male .animal-head-accessory.headband {
