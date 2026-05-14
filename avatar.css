@@ -3197,6 +3197,725 @@
     z-index: 2;
 }
 
+
+/* Enhanced costume details */
+.animal-body.chef {
+    border: 2px solid rgba(156, 163, 175, 0.45);
+    box-shadow: inset 0 8px 18px rgba(255, 255, 255, 0.75), inset 0 -10px 18px rgba(107, 114, 128, 0.16);
+}
+
+.animal-body.chef .chef-jacket {
+    position: absolute;
+    inset: 8px 13px 12px;
+    background: linear-gradient(90deg, #fff 0 48%, #e5e7eb 48% 52%, #fff 52% 100%);
+    border: 1px solid rgba(156, 163, 175, 0.35);
+    border-radius: 18px 18px 24px 24px;
+    z-index: 0;
+}
+
+.animal-body.chef .chef-scarf {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    width: 28px;
+    height: 15px;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+    border-radius: 8px 8px 12px 12px;
+    z-index: 3;
+}
+
+.animal-body.chef .chef-pocket {
+    position: absolute;
+    right: 20px;
+    top: 42px;
+    width: 18px;
+    height: 14px;
+    border: 2px solid #cbd5e1;
+    border-top: 0;
+    border-radius: 0 0 7px 7px;
+    z-index: 3;
+}
+
+.animal-body.chef .chef-buttons {
+    z-index: 3;
+}
+
+.animal-body.knight.male,
+.animal-body.knight.female {
+    background: linear-gradient(145deg, #d1d5db 0%, #9ca3af 34%, #64748b 68%, #374151 100%) !important;
+    border: 3px solid #334155;
+    box-shadow: inset 7px 8px 16px rgba(255, 255, 255, 0.38), inset -9px -9px 16px rgba(15, 23, 42, 0.28), 0 5px 12px rgba(15, 23, 42, 0.28);
+}
+
+.animal-body.knight .knight-sword {
+    position: absolute;
+    top: -31px;
+    right: -17px;
+    width: 12px;
+    height: 98px;
+    background: linear-gradient(90deg, #94a3b8 0%, #f8fafc 35%, #cbd5e1 62%, #64748b 100%);
+    border: 1px solid #475569;
+    border-radius: 8px 8px 3px 3px;
+    transform: rotate(38deg);
+    transform-origin: 50% 78%;
+    z-index: -1;
+    box-shadow: 0 2px 7px rgba(15, 23, 42, 0.35);
+}
+
+.animal-body.knight .knight-sword::before {
+    content: '';
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 15px solid #e2e8f0;
+    transform: translateX(-50%);
+}
+
+.animal-body.knight .knight-sword::after {
+    content: '';
+    position: absolute;
+    bottom: 11px;
+    left: 50%;
+    width: 34px;
+    height: 8px;
+    background: linear-gradient(180deg, #fbbf24 0%, #b45309 100%);
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+.animal-body.knight .knight-sword-handle {
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    width: 10px;
+    height: 25px;
+    background: linear-gradient(90deg, #78350f 0%, #b45309 100%);
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+.animal-body.knight .knight-shoulders {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    width: 126px;
+    height: 30px;
+    transform: translateX(-50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.animal-body.knight .knight-shoulders::before,
+.animal-body.knight .knight-shoulders::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    width: 38px;
+    height: 25px;
+    background: linear-gradient(145deg, #e5e7eb 0%, #94a3b8 55%, #475569 100%);
+    border: 2px solid #334155;
+    border-radius: 24px 24px 10px 10px;
+    box-shadow: inset 4px 5px 8px rgba(255, 255, 255, 0.4);
+}
+
+.animal-body.knight .knight-shoulders::before {
+    left: 0;
+    transform: rotate(-16deg);
+}
+
+.animal-body.knight .knight-shoulders::after {
+    right: 0;
+    transform: rotate(16deg);
+}
+
+.animal-body.knight .knight-chainmail {
+    position: absolute;
+    inset: 10px 13px 18px;
+    background: radial-gradient(circle, rgba(30, 41, 59, 0.42) 1px, transparent 2px) 0 0 / 9px 8px, linear-gradient(180deg, rgba(226, 232, 240, 0.55), rgba(100, 116, 139, 0.32));
+    border-radius: 15px 15px 22px 22px;
+    z-index: 0;
+}
+
+.animal-body.knight .knight-armor {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.5) 0%, rgba(148, 163, 184, 0.15) 42%, rgba(15, 23, 42, 0.24) 100%);
+    z-index: 2;
+}
+
+.animal-body.knight .knight-chest-plate {
+    top: 11px;
+    width: 60px;
+    height: 50px;
+    background: linear-gradient(145deg, #f1f5f9 0%, #94a3b8 52%, #475569 100%);
+    border: 2px solid #334155;
+    border-radius: 18px 18px 14px 14px;
+    box-shadow: inset 5px 7px 10px rgba(255, 255, 255, 0.5), inset -5px -8px 10px rgba(30, 41, 59, 0.24);
+    z-index: 3;
+}
+
+.animal-body.knight .knight-chest-plate::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 4px;
+    height: 32px;
+    background: #fbbf24;
+    border-radius: 3px;
+    transform: translateX(-50%);
+}
+
+.animal-body.knight .knight-chest-plate::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: 50%;
+    width: 30px;
+    height: 4px;
+    background: #fbbf24;
+    border-radius: 3px;
+    transform: translateX(-50%);
+}
+
+.animal-body.knight .knight-crest {
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    width: 32px;
+    height: 24px;
+    transform: translateX(-50%);
+    border: 2px solid rgba(251, 191, 36, 0.9);
+    border-radius: 6px 6px 12px 12px;
+    z-index: 4;
+}
+
+.animal-body.knight .knight-belt {
+    bottom: 21px;
+    background: linear-gradient(180deg, #78350f 0%, #451a03 100%);
+    border: 1px solid #fbbf24;
+    z-index: 5;
+}
+
+.animal-body.knight .knight-skirt {
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 68px;
+    height: 22px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(90deg, #94a3b8 0 10px, #64748b 10px 12px, #cbd5e1 12px 20px);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 72% 62%, 55% 100%, 50% 62%, 32% 100%, 18% 62%, 5% 100%);
+    z-index: 2;
+}
+
+.animal-body.astronaut.male,
+.animal-body.astronaut.female {
+    background: linear-gradient(145deg, #ffffff 0%, #e5e7eb 42%, #cbd5e1 72%, #94a3b8 100%) !important;
+    border: 4px solid #64748b;
+    box-shadow: inset 8px 9px 18px rgba(255, 255, 255, 0.85), inset -8px -9px 18px rgba(71, 85, 105, 0.2), 0 6px 14px rgba(51, 65, 85, 0.22);
+}
+
+.animal-body.astronaut .astronaut-backpack {
+    position: absolute;
+    top: 11px;
+    right: -18px;
+    width: 24px;
+    height: 61px;
+    background: linear-gradient(180deg, #94a3b8 0%, #475569 100%);
+    border: 3px solid #334155;
+    border-radius: 10px;
+    z-index: -1;
+    box-shadow: inset 3px 4px 7px rgba(255, 255, 255, 0.25);
+}
+
+.animal-body.astronaut .astronaut-helmet {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 126px;
+    height: 106px;
+    transform: translateX(-50%);
+    border: 9px solid rgba(203, 213, 225, 0.9);
+    border-bottom-width: 15px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 34% 26%, rgba(255, 255, 255, 0.62) 0 18%, rgba(125, 211, 252, 0.2) 19% 58%, rgba(255, 255, 255, 0.18) 59% 100%);
+    z-index: -1;
+    box-shadow: inset 0 0 18px rgba(14, 165, 233, 0.16), 0 6px 14px rgba(51, 65, 85, 0.18);
+}
+
+.animal-body.astronaut .astronaut-shoulders {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    width: 132px;
+    height: 32px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.animal-body.astronaut .astronaut-shoulders::before,
+.animal-body.astronaut .astronaut-shoulders::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 36px;
+    height: 27px;
+    background: linear-gradient(145deg, #ffffff 0%, #d1d5db 100%);
+    border: 3px solid #64748b;
+    border-radius: 22px 22px 9px 9px;
+}
+
+.animal-body.astronaut .astronaut-shoulders::before { left: 0; transform: rotate(-13deg); }
+.animal-body.astronaut .astronaut-shoulders::after { right: 0; transform: rotate(13deg); }
+
+.animal-body.astronaut .astronaut-chest-rib {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 74px;
+    height: 55px;
+    transform: translateX(-50%);
+    border: 2px solid rgba(100, 116, 139, 0.55);
+    border-radius: 18px 18px 12px 12px;
+    background: repeating-linear-gradient(90deg, rgba(148, 163, 184, 0.3) 0 3px, transparent 3px 13px);
+    z-index: 2;
+}
+
+.animal-body.astronaut .astronaut-panel {
+    top: 22px;
+    width: 50px;
+    height: 38px;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    border: 3px solid #64748b;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+    z-index: 4;
+}
+
+.animal-body.astronaut .astronaut-panel::before,
+.animal-body.astronaut .astronaut-panel::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+
+.animal-body.astronaut .astronaut-panel::before {
+    top: 8px;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    box-shadow: 17px 0 0 #ef4444;
+}
+
+.animal-body.astronaut .astronaut-panel::after {
+    left: 11px;
+    top: 24px;
+    width: 28px;
+    height: 5px;
+    background: linear-gradient(90deg, #38bdf8 0 35%, #f8fafc 35% 100%);
+    border-radius: 5px;
+}
+
+.animal-body.astronaut .astronaut-hose {
+    position: absolute;
+    top: 23px;
+    width: 34px;
+    height: 37px;
+    border: 4px solid #64748b;
+    border-bottom: 0;
+    z-index: 3;
+}
+
+.animal-body.astronaut .astronaut-hose.left {
+    left: 13px;
+    border-right: 0;
+    border-radius: 18px 0 0 0;
+}
+
+.animal-body.astronaut .astronaut-hose.right {
+    right: 13px;
+    border-left: 0;
+    border-radius: 0 18px 0 0;
+}
+
+.animal-body.astronaut .astronaut-badge {
+    top: 14px;
+    left: 75%;
+    width: 19px;
+    height: 19px;
+    background: radial-gradient(circle at 35% 35%, #38bdf8 0 30%, #1d4ed8 31% 100%);
+    border: 2px solid #f8fafc;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.animal-body.astronaut .astronaut-badge::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 3px;
+    background: #f8fafc;
+    border-radius: 4px;
+    transform: translate(-50%, -50%) rotate(-28deg);
+}
+
+.animal-body.astronaut .astronaut-belt {
+    bottom: 18px;
+    width: 86px;
+    height: 15px;
+    background: linear-gradient(180deg, #64748b 0%, #334155 100%);
+    border: 2px solid #cbd5e1;
+    z-index: 5;
+}
+
+.animal-body.astronaut .astronaut-cuffs {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 94px;
+    height: 13px;
+    transform: translateX(-50%);
+    border-left: 13px solid #64748b;
+    border-right: 13px solid #64748b;
+    z-index: 4;
+}
+
+.animal-body.pirate .pirate-shoulders {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    width: 92px;
+    height: 18px;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.animal-body.pirate .pirate-shoulders::before,
+.animal-body.pirate .pirate-shoulders::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 26px;
+    height: 13px;
+    background: linear-gradient(180deg, #fbbf24 0%, #b45309 100%);
+    border-radius: 12px 12px 4px 4px;
+}
+
+.animal-body.pirate .pirate-shoulders::before { left: 0; }
+.animal-body.pirate .pirate-shoulders::after { right: 0; }
+
+.animal-body.pirate .pirate-sash {
+    position: absolute;
+    top: 22px;
+    left: 14px;
+    width: 76px;
+    height: 13px;
+    background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+    border-radius: 8px;
+    transform: rotate(-23deg);
+    z-index: 3;
+}
+
+.animal-body.pirate .pirate-vest {
+    background: linear-gradient(180deg, #991b1b 0%, #450a0a 100%);
+    border: 2px solid #fbbf24;
+}
+
+.animal-body.wizard .wizard-moon {
+    position: absolute;
+    top: 17px;
+    right: 28px;
+    width: 16px;
+    height: 16px;
+    background: #fef3c7;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(254, 243, 199, 0.6);
+    z-index: 3;
+}
+
+.animal-body.wizard .wizard-moon::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    width: 14px;
+    height: 17px;
+    background: #3730a3;
+    border-radius: 50%;
+}
+
+.animal-body.wizard .wizard-stars::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    top: 0;
+    left: 6px;
+    background: #fbbf24;
+    clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
+    box-shadow: 28px 7px 0 #fef3c7, 12px 23px 0 #fbbf24;
+}
+
+.animal-body.fairy .fairy-petals {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 78px;
+    height: 24px;
+    transform: translateX(-50%);
+    background: repeating-radial-gradient(circle at 8px 10px, #fce7f3 0 7px, transparent 8px 16px);
+    z-index: 2;
+}
+
+.animal-body.fairy .fairy-wand {
+    position: absolute;
+    top: 25px;
+    right: -10px;
+    width: 4px;
+    height: 45px;
+    background: linear-gradient(180deg, #fef3c7, #f59e0b);
+    border-radius: 4px;
+    transform: rotate(-30deg);
+    z-index: 4;
+}
+
+.animal-body.santa .santa-center-trim {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    width: 14px;
+    height: 56px;
+    transform: translateX(-50%);
+    background: #fff7ed;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.animal-body.santa .santa-buttons {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    width: 6px;
+    height: 36px;
+    transform: translateX(-50%);
+    background: #111827;
+    border-radius: 50%;
+    box-shadow: 0 15px 0 #111827, 0 30px 0 #111827;
+    z-index: 3;
+}
+
+.animal-body.vampire .vampire-shirt {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    width: 38px;
+    height: 48px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 100%);
+    border-radius: 12px 12px 4px 4px;
+    z-index: 0;
+}
+
+.animal-body.vampire .vampire-cravat {
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    width: 28px;
+    height: 22px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #f8fafc 0%, #cbd5e1 100%);
+    clip-path: polygon(50% 0, 100% 35%, 75% 100%, 50% 70%, 25% 100%, 0 35%);
+    z-index: 3;
+}
+
+.animal-body.maid .maid-frill {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 76px;
+    height: 16px;
+    transform: translateX(-50%);
+    background: repeating-radial-gradient(circle at 8px 9px, #ffffff 0 7px, transparent 8px 16px);
+    z-index: 2;
+}
+
+.animal-body.butler .butler-tails {
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    width: 82px;
+    height: 42px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, #111827 0%, #030712 100%);
+    clip-path: polygon(0 0, 43% 0, 50% 100%, 57% 0, 100% 0, 84% 70%, 50% 100%, 16% 70%);
+    z-index: -1;
+}
+
+.animal-body.butler .butler-buttons {
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    transform: translateX(-50%);
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: 0 13px 0 #fbbf24, 0 26px 0 #fbbf24;
+    z-index: 3;
+}
+
+.outfit-icon.knight,
+.outfit-icon.astronaut,
+.outfit-icon.pirate,
+.outfit-icon.wizard,
+.outfit-icon.fairy,
+.outfit-icon.chef {
+    overflow: visible;
+}
+
+.outfit-icon.knight::before {
+    content: '';
+    position: absolute;
+    inset: 6px 9px 8px;
+    background: linear-gradient(145deg, #f1f5f9 0%, #64748b 100%);
+    border: 2px solid #334155;
+    border-radius: 10px 10px 8px 8px;
+}
+
+.outfit-icon.knight::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: -2px;
+    width: 5px;
+    height: 35px;
+    background: #cbd5e1;
+    border: 1px solid #475569;
+    border-radius: 4px;
+    transform: rotate(35deg);
+    box-shadow: -13px 18px 0 -1px #92400e;
+}
+
+.outfit-icon.astronaut::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 33px;
+    height: 30px;
+    transform: translateX(-50%);
+    border: 5px solid #cbd5e1;
+    border-radius: 50%;
+    background: rgba(125, 211, 252, 0.22);
+}
+
+.outfit-icon.astronaut::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 7px;
+    width: 20px;
+    height: 16px;
+    transform: translateX(-50%);
+    background: #1e293b;
+    border: 2px solid #64748b;
+    border-radius: 5px;
+    box-shadow: 0 0 0 7px #f8fafc;
+}
+
+.outfit-icon.pirate::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    width: 29px;
+    height: 9px;
+    background: #ef4444;
+    border-radius: 8px;
+    transform: rotate(-25deg);
+}
+
+.outfit-icon.pirate::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    width: 28px;
+    height: 8px;
+    transform: translateX(-50%);
+    background: #92400e;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px #fbbf24 inset;
+}
+
+.outfit-icon.wizard::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    width: 29px;
+    height: 30px;
+    transform: translateX(-50%);
+    background: #3730a3;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    border-radius: 4px;
+}
+
+.outfit-icon.wizard::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 13px;
+    width: 6px;
+    height: 6px;
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: 13px -6px 0 #fef3c7, 8px 9px 0 #fbbf24;
+}
+
+.outfit-icon.fairy::before,
+.outfit-icon.fairy::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    width: 20px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgba(244, 114, 182, 0.5);
+    border-radius: 50%;
+}
+
+.outfit-icon.fairy::before { left: -4px; transform: rotate(-22deg); }
+.outfit-icon.fairy::after { right: -4px; transform: rotate(22deg); }
+
+.outfit-icon.chef::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    width: 36px;
+    height: 18px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle at 8px 10px, #fff 0 9px, transparent 10px), radial-gradient(circle at 19px 6px, #fff 0 11px, transparent 12px), radial-gradient(circle at 30px 10px, #fff 0 9px, transparent 10px);
+}
+
+.outfit-icon.chef::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    transform: translateX(-50%);
+    background: #111827;
+    border-radius: 50%;
+    box-shadow: 0 9px 0 #111827, 0 18px 0 #111827;
+}
 .settings-avatar-preview {
     width: 160px;
     height: 220px;

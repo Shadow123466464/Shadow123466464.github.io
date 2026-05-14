@@ -398,15 +398,23 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
 
         case 'chef':
             return '<div class="animal-body chef ' + genderClass + '" style="background:linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)">' +
+                '<div class="chef-jacket"></div>' +
                 '<div class="chef-collar"></div>' +
+                '<div class="chef-scarf"></div>' +
                 '<div class="chef-buttons"></div>' +
+                '<div class="chef-pocket"></div>' +
             '</div>';
 
         case 'knight':
             return '<div class="animal-body knight ' + genderClass + '">' +
+                '<div class="knight-sword"><div class="knight-sword-handle"></div></div>' +
+                '<div class="knight-shoulders"></div>' +
+                '<div class="knight-chainmail"></div>' +
                 '<div class="knight-armor"></div>' +
                 '<div class="knight-chest-plate"></div>' +
+                '<div class="knight-crest"></div>' +
                 '<div class="knight-belt"></div>' +
+                '<div class="knight-skirt"></div>' +
             '</div>';
 
         case 'princess':
@@ -429,7 +437,9 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
         case 'pirate':
             return '<div class="animal-body pirate ' + genderClass + '">' +
                 '<div class="pirate-coat"></div>' +
+                '<div class="pirate-shoulders"></div>' +
                 '<div class="pirate-vest"></div>' +
+                '<div class="pirate-sash"></div>' +
                 '<div class="pirate-belt"></div>' +
                 '<div class="pirate-buckle"></div>' +
             '</div>';
@@ -438,6 +448,7 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
             return '<div class="animal-body wizard ' + genderClass + '">' +
                 '<div class="wizard-robe"></div>' +
                 '<div class="wizard-collar"></div>' +
+                '<div class="wizard-moon"></div>' +
                 '<div class="wizard-stars"></div>' +
                 '<div class="wizard-belt"></div>' +
             '</div>';
@@ -446,7 +457,9 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
             return '<div class="animal-body fairy female">' +
                 '<div class="fairy-dress"></div>' +
                 '<div class="fairy-wings"></div>' +
+                '<div class="fairy-petals"></div>' +
                 '<div class="fairy-sparkles"></div>' +
+                '<div class="fairy-wand"></div>' +
             '</div>';
 
         case 'elf':
@@ -460,6 +473,8 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
             return '<div class="animal-body santa ' + genderClass + '">' +
                 '<div class="santa-coat"></div>' +
                 '<div class="santa-fur-trim"></div>' +
+                '<div class="santa-center-trim"></div>' +
+                '<div class="santa-buttons"></div>' +
                 '<div class="santa-belt"></div>' +
                 '<div class="santa-buckle"></div>' +
             '</div>';
@@ -469,6 +484,8 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
                 '<div class="vampire-cape"></div>' +
                 '<div class="vampire-suit"></div>' +
                 '<div class="vampire-collar"></div>' +
+                '<div class="vampire-shirt"></div>' +
+                '<div class="vampire-cravat"></div>' +
                 '<div class="vampire-vest"></div>' +
                 '<div class="vampire-buttons"></div>' +
             '</div>';
@@ -479,22 +496,32 @@ function generateBody(outfitStyle, outfitColor, furColor, gender) {
                 '<div class="maid-apron"></div>' +
                 '<div class="maid-collar"></div>' +
                 '<div class="maid-ribbon"></div>' +
+                '<div class="maid-frill"></div>' +
             '</div>';
 
         case 'butler':
             return '<div class="animal-body butler ' + genderClass + '">' +
+                '<div class="butler-tails"></div>' +
                 '<div class="butler-coat"></div>' +
                 '<div class="butler-vest"></div>' +
                 '<div class="butler-shirt"></div>' +
                 '<div class="butler-bowtie"></div>' +
+                '<div class="butler-buttons"></div>' +
             '</div>';
 
         case 'astronaut':
             return '<div class="animal-body astronaut ' + genderClass + '">' +
+                '<div class="astronaut-backpack"></div>' +
+                '<div class="astronaut-helmet"></div>' +
+                '<div class="astronaut-shoulders"></div>' +
                 '<div class="astronaut-suit"></div>' +
+                '<div class="astronaut-chest-rib"></div>' +
                 '<div class="astronaut-panel"></div>' +
+                '<div class="astronaut-hose left"></div>' +
+                '<div class="astronaut-hose right"></div>' +
                 '<div class="astronaut-badge"></div>' +
                 '<div class="astronaut-belt"></div>' +
+                '<div class="astronaut-cuffs"></div>' +
             '</div>';
 
         case 'king':
