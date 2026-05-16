@@ -1150,28 +1150,39 @@
 }
 
 .animal-head-accessory.flower {
-    width: 28px;
-    height: 28px;
-    top: 20px;
-    right: 10px;
+    width: 34px;
+    height: 34px;
+    top: 18px;
+    right: 7px;
+    left: auto;
+    transform: none;
 }
 
 .animal-head-accessory.flower::before {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, #fbbf24 0 20%, transparent 21%),
+        radial-gradient(circle at 50% 18%, var(--accessory-color, #ff6b81) 0 20%, transparent 21%),
+        radial-gradient(circle at 80% 38%, var(--accessory-color, #ff6b81) 0 20%, transparent 21%),
+        radial-gradient(circle at 68% 76%, var(--accessory-color, #ff6b81) 0 20%, transparent 21%),
+        radial-gradient(circle at 32% 76%, var(--accessory-color, #ff6b81) 0 20%, transparent 21%),
+        radial-gradient(circle at 20% 38%, var(--accessory-color, #ff6b81) 0 20%, transparent 21%);
+    filter: drop-shadow(0 2px 2px rgba(80, 43, 28, 0.12));
+}
+
+.animal-head-accessory.flower::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background: #fbbf24;
+    background: #fff7c7;
     border-radius: 50%;
-    box-shadow:
-        0 -10px 0 var(--accessory-color, #ff6b81),
-        9px -4px 0 var(--accessory-color, #ff6b81),
-        7px 7px 0 var(--accessory-color, #ff6b81),
-        -7px 7px 0 var(--accessory-color, #ff6b81),
-        -9px -4px 0 var(--accessory-color, #ff6b81);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
 .animal-head-accessory.crown {
@@ -1236,7 +1247,7 @@
 .animal-head-accessory.hat {
     width: 60px;
     height: 35px;
-    top: -2px;
+    top: 2px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--accessory-color, #8B4513);
@@ -1261,7 +1272,7 @@
     height: 32px;
     background: var(--accessory-color, #3b82f6);
     border-radius: 50% 50% 0 0;
-    top: -5px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1283,7 +1294,7 @@
     height: 40px;
     background: var(--accessory-color, #6366f1);
     border-radius: 50% 50% 0 0;
-    top: -6px;
+    top: -1px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -1302,13 +1313,43 @@
 }
 
 .animal-head-accessory.headband {
-    width: 100px;
-    height: 10px;
-    background: var(--accessory-color, #ff6b81);
-    border-radius: 5px;
-    top: 28px;
+    width: 102px;
+    height: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0.05) 100%), var(--accessory-color, #ff6b81);
+    border-radius: 999px;
+    top: 24px;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.35) inset, 0 -2px 0 rgba(0, 0, 0, 0.06) inset;
+}
+
+.animal-head-accessory.headband::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 50%;
+    top: -6px;
+    transform: translateX(-50%);
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.45),
+        0 0 10px rgba(251, 191, 36, 0.35);
+}
+
+.animal-head-accessory.headband::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: -7px;
+    transform: translateX(-50%);
+    background:
+        radial-gradient(circle at 50% 30%, #fff7c7 0 16%, transparent 17%),
+        radial-gradient(circle at 50% 50%, var(--accessory-color, #ff6b81) 0 46%, transparent 47%);
+    clip-path: polygon(50% 0%, 61% 30%, 92% 35%, 68% 55%, 78% 86%, 50% 68%, 22% 86%, 32% 55%, 8% 35%, 39% 30%);
 }
 
 .animal-head-accessory.bunny-ears {
@@ -1518,33 +1559,34 @@
 }
 
 .animal-head-accessory.santa-hat {
-    width: 70px;
-    height: 50px;
-    top: -10px;
+    width: 68px;
+    height: 46px;
+    top: -6px;
     left: 50%;
     transform: translateX(-50%);
+    filter: drop-shadow(0 2px 2px rgba(80, 43, 28, 0.14));
 }
 
 .animal-head-accessory.santa-hat::before {
     content: '';
     position: absolute;
-    width: 50px;
-    height: 45px;
+    width: 46px;
+    height: 36px;
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    border-radius: 0 80% 0 0;
-    top: 5px;
-    left: 10px;
-    transform: rotate(10deg);
+    border-radius: 70% 36% 20% 24%;
+    clip-path: polygon(4% 100%, 12% 64%, 28% 25%, 50% 0, 74% 12%, 100% 38%, 76% 50%, 88% 100%);
+    top: 4px;
+    left: 13px;
+    transform: rotate(6deg);
 }
 
 .animal-head-accessory.santa-hat::after {
     content: '';
     position: absolute;
-    width: 70px;
-    height: 15px;
-    background: white;
-    border-radius: 5px;
-    bottom: 0;
+    inset: 0;
+    background:
+        radial-gradient(circle at 55px 8px, #fff 0 7px, transparent 8px),
+        radial-gradient(ellipse 58px 14px at 34px 35px, #fff 0 53%, transparent 54%);
 }
 
 .animal-head-accessory.party-hat {
@@ -1582,8 +1624,8 @@
 .animal-avatar.lion.male .animal-head-accessory.crown { top: -5px; }
 .animal-avatar.lion.male .animal-head-accessory.tiara { top: -2px; }
     .animal-avatar.lion.male .animal-head-accessory.hat { top: -10px; }
-    .animal-avatar.lion.male .animal-head-accessory.cap { top: -6px; }
-    .animal-avatar.lion.male .animal-head-accessory.beanie { top: -8px; }
+    .animal-avatar.lion.male .animal-head-accessory.cap { top: -2px; }
+    .animal-avatar.lion.male .animal-head-accessory.beanie { top: -4px; }
 .animal-avatar.lion.male .animal-head-accessory.helmet { top: -14px; }
 
 .animal-avatar.lion.male .animal-head-accessory.headband {
@@ -1603,8 +1645,8 @@
 .animal-avatar.capybara .animal-head-accessory.crown { top: 2px; }
 .animal-avatar.capybara .animal-head-accessory.tiara { top: 5px; }
 .animal-avatar.capybara .animal-head-accessory.hat { top: -14px; }
-.animal-avatar.capybara .animal-head-accessory.cap { top: -10px; }
-.animal-avatar.capybara .animal-head-accessory.beanie { top: -12px; }
+.animal-avatar.capybara .animal-head-accessory.cap { top: -4px; }
+.animal-avatar.capybara .animal-head-accessory.beanie { top: -6px; }
 .animal-avatar.capybara .animal-head-accessory.helmet { top: -8px; }
 
 .animal-body.casual.male {
