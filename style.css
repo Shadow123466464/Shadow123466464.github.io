@@ -350,9 +350,13 @@ h1 {
     border-radius: 10px;
     max-width: 600px;
     width: 90%;
+    max-height: 90vh;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .secret-letter-text {
@@ -361,12 +365,15 @@ h1 {
     line-height: 1.6;
     color: #4a1c2f;
     margin-bottom: 20px;
-    min-height: 300px;
+    min-height: 0;
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    overflow-x: hidden;
     overflow-y: auto;
-    max-height: 350px;
+    max-height: 60vh;
     padding-right: 10px;
 }
 
@@ -387,7 +394,7 @@ h1 {
 
 .typewriter-container {
     position: relative;
-    min-height: 300px;
+    min-height: 0;
 }
 
 .return-button {
@@ -401,6 +408,8 @@ h1 {
     font-family: 'Montserrat', sans-serif;
     transition: all 0.3s ease;
     margin-top: 20px;
+    align-self: center;
+    min-width: 120px;
 }
 
 .return-button:hover {
@@ -431,6 +440,15 @@ h1 {
     
     .secret-letter-text {
         font-size: 18px;
+        line-height: 1.5;
+        max-height: 56vh;
+        min-height: 0;
+        padding-right: 6px;
+    }
+
+    .secret-letter-content {
+        width: 94%;
+        padding: 20px;
     }
 }
 

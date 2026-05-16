@@ -374,7 +374,7 @@ var ProfileManager = {
             '.option-card.selected{border-color:' + color + ' !important;background:rgba(255,107,129,0.08) !important;}' +
             '.form-group input:focus{border-color:' + color + ' !important;box-shadow:0 0 0 3px rgba(255,107,129,0.18) !important;}' +
             '.stat-value,.settings-header h2 i,.preview-heart{color:' + color + ' !important;}' +
-            '.preview-button,#secretLetterButton{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;}';
+            '.preview-button,#secretLetterButton,#wordleReplayButton,.wordle-replay-button,.return-button{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;color:#fff !important;}';
         document.head.appendChild(style);
     },
 
