@@ -612,7 +612,7 @@ function isChangingToAzza(oldFirst, oldLast, oldGender, newFirst, newLast, newGe
     return !wasAzza && isAzzaNow;
 }
 
-function showSpecialAzzaPage(avatarConfig) {
+function showSpecialAzzaPage(avatarConfig, onClose) {
     var overlay = document.getElementById('specialAzzaOverlay');
 
     if (!overlay) {
@@ -639,14 +639,20 @@ function showSpecialAzzaPage(avatarConfig) {
         document.body.appendChild(overlay);
 
         document.getElementById('closeAzzaPage').addEventListener('click', function() {
+            var afterClose = overlay.azzaOnClose;
+            overlay.azzaOnClose = null;
             overlay.classList.add('hiding');
             setTimeout(function() {
                 overlay.classList.remove('show', 'hiding');
                 overlay.style.display = 'none';
+                if (typeof afterClose === 'function') {
+                    afterClose();
+                }
             }, 500);
         });
     }
 
+    overlay.azzaOnClose = typeof onClose === 'function' ? onClose : null;
     overlay.style.display = 'flex';
     overlay.classList.add('show');
 

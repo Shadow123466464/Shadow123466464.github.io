@@ -80,26 +80,11 @@ var ProfileManager = {
             this.applyThemeColor(this.themeColor);
             this.syncStreak();
 
-            var justCreated = localStorage.getItem('justCreatedProfile');
-            var pendingAzza = localStorage.getItem('pendingAzzaIntro');
+            localStorage.removeItem('justCreatedProfile');
+            localStorage.removeItem('pendingAzzaIntro');
 
-            if (justCreated === 'true') {
-                localStorage.removeItem('justCreatedProfile');
-                this.hideSetupOverlay();
-                this.updateProfileDisplay();
-
-                if (pendingAzza === 'true' && checkIfAzza(this.profile.firstName, this.profile.lastName, this.avatarConfig.gender)) {
-                    localStorage.removeItem('pendingAzzaIntro');
-                    this.showAzzaThenWordle();
-                } else {
-                    var mainContent = document.getElementById('mainContent');
-                    if (mainContent) mainContent.style.display = 'none';
-                    if (typeof WordleGame !== 'undefined' && WordleGame && typeof WordleGame.show === 'function') {
-                        WordleGame.show();
-                    } else {
-                        this.showMainContent();
-                    }
-                }
+            if (checkIfAzza(this.profile.firstName, this.profile.lastName, this.avatarConfig.gender)) {
+                this.showAzzaThenWordle();
             } else {
                 this.showMainContent();
             }
@@ -116,19 +101,13 @@ var ProfileManager = {
         var mainContent = document.getElementById('mainContent');
         if (mainContent) mainContent.style.display = 'none';
 
-        showSpecialAzzaPage(this.avatarConfig);
-
-        var closeBtnCheck = setInterval(function() {
-            var overlay = document.getElementById('specialAzzaOverlay');
-            if (!overlay || overlay.style.display === 'none' || !overlay.classList.contains('show')) {
-                clearInterval(closeBtnCheck);
-                if (typeof WordleGame !== 'undefined' && WordleGame && typeof WordleGame.show === 'function') {
-                    WordleGame.show();
-                } else {
-                    self.showMainContent();
-                }
+        showSpecialAzzaPage(this.avatarConfig, function() {
+            if (typeof WordleGame !== 'undefined' && WordleGame && typeof WordleGame.show === 'function') {
+                WordleGame.show();
+            } else {
+                self.showMainContent();
             }
-        }, 300);
+        });
     },
 
     syncStreak: function() {
@@ -461,14 +440,8 @@ var ProfileManager = {
         var finishSetup = document.getElementById('finishSetup');
         if (finishSetup) {
             finishSetup.addEventListener('click', function() {
-                localStorage.setItem('justCreatedProfile', 'true');
-
-                if (checkIfAzza(self.profile.firstName, self.profile.lastName, self.avatarConfig.gender)) {
-                    localStorage.setItem('pendingAzzaIntro', 'true');
-                } else {
-                    localStorage.removeItem('pendingAzzaIntro');
-                }
-
+                localStorage.removeItem('justCreatedProfile');
+                localStorage.removeItem('pendingAzzaIntro');
                 self.saveProfile();
                 self.hideSetupOverlay();
                 self.updateProfileDisplay();
@@ -889,10 +862,6 @@ var ProfileManager = {
 
         if (errorEl) errorEl.textContent = '';
 
-        var oldFirstName = this.profile ? this.profile.firstName : '';
-        var oldLastName = this.profile ? this.profile.lastName : '';
-        var oldGender = this.profile && this.profile.avatar ? this.profile.avatar.gender : 'female';
-
         this.profile.firstName = newFirstName;
         this.profile.lastName = newLastName;
         this.profile.avatar = this.avatarConfig;
@@ -902,10 +871,6 @@ var ProfileManager = {
         this.updateProfileDisplay();
         this.applyThemeColor(this.themeColor);
         this.closeSettings();
-
-        if (isChangingToAzza(oldFirstName, oldLastName, oldGender, newFirstName, newLastName, this.avatarConfig.gender)) {
-            showSpecialAzzaPage(this.avatarConfig);
-        }
     }
 };
 
