@@ -102,7 +102,10 @@ var ProfileManager = {
         if (mainContent) mainContent.style.display = 'none';
 
         showSpecialAzzaPage(this.avatarConfig, function() {
-            if (typeof WordleGame !== 'undefined' && WordleGame && typeof WordleGame.show === 'function') {
+            var today = new Date().toISOString().split('T')[0];
+            var alreadyPlayed = localStorage.getItem('wordlePlayed_' + today);
+
+            if (!alreadyPlayed && typeof WordleGame !== 'undefined' && WordleGame && typeof WordleGame.show === 'function') {
                 WordleGame.show();
             } else {
                 self.showMainContent();
