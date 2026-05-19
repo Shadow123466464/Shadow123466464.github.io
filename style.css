@@ -357,6 +357,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    overflow-y: auto;
 }
 
 .secret-letter-text {
@@ -374,7 +375,8 @@ h1 {
     overflow-x: hidden;
     overflow-y: auto;
     max-height: 60vh;
-    padding-right: 10px;
+    padding: 0 16px 12px 6px;
+    scrollbar-gutter: stable;
 }
 
 .typewriter-cursor {
@@ -443,7 +445,7 @@ h1 {
         line-height: 1.5;
         max-height: 56vh;
         min-height: 0;
-        padding-right: 6px;
+        padding: 0 12px 12px 4px;
     }
 
     .secret-letter-content {
@@ -484,15 +486,21 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     font-family: 'Montserrat', sans-serif;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .wordle-replay-button:hover {
+    background: linear-gradient(135deg, #ff4f72 0%, #ff7c97 100%);
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(255, 95, 126, 0.32);
+}
+
+.wordle-replay-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .wordle-replay-button i {
