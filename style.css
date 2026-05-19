@@ -5,6 +5,9 @@
     --envelope-color: #fef9ff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --highlight-color: #ffb6c1;
+    --theme-color: #ff6b81;
+    --theme-light: #ff8aa0;
+    --theme-dark: #ff5266;
 }
 
 * {
@@ -250,7 +253,7 @@ h1 {
 .paper button {
     margin-top: 1.5rem;
     padding: 0.7rem 1.5rem;
-    background: #ff6b81;
+    background: var(--theme-color);
     border: none;
     border-radius: 2rem;
     color: white;
@@ -266,7 +269,7 @@ h1 {
 }
 
 .paper button:hover {
-    background: #ff5266;
+    background: var(--theme-dark);
 }
 
 .paper button i {
@@ -312,7 +315,7 @@ h1 {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ff6b81;
+    background-color: var(--theme-color);
     color: white;
     border: none;
     border-radius: 50px;
@@ -326,7 +329,7 @@ h1 {
 }
 
 .secret-letter-button:hover {
-    background-color: #ff5266;
+    background-color: var(--theme-dark);
     transform: scale(1.05);
 }
 
@@ -383,7 +386,7 @@ h1 {
     display: inline-block;
     width: 3px;
     height: 30px;
-    background-color: #ff6b81;
+    background-color: var(--theme-color);
     animation: blink 1s infinite;
     vertical-align: middle;
     margin-left: 2px;
@@ -400,7 +403,7 @@ h1 {
 }
 
 .return-button {
-    background-color: #ff6b81;
+    background-color: var(--theme-color);
     color: white;
     border: none;
     border-radius: 25px;
@@ -415,7 +418,7 @@ h1 {
 }
 
 .return-button:hover {
-    background-color: #ff5266;
+    background-color: var(--theme-dark);
 }
 
 @media (max-width: 768px) {

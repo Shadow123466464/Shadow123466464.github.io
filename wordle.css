@@ -95,7 +95,7 @@
 .wordle-title {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
-    color: #ff5f7e;
+    color: var(--theme-color);
     margin: 0;
     text-shadow: 0 6px 22px rgba(255, 95, 126, 0.22);
 }
@@ -174,7 +174,7 @@
 }
 
 .wordle-tile.filled {
-    border-color: #ff8aa0;
+    border-color: var(--theme-color);
     animation: pop 0.1s ease;
 }
 
@@ -303,17 +303,17 @@
 }
 
 .hint-btn {
-    background: linear-gradient(135deg, #8bd7c4 0%, #35d2aa 100%);
+    background: linear-gradient(135deg, var(--theme-color) 0%, var(--theme-light) 100%);
     color: white;
 }
 
 .hint-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(53, 210, 170, 0.28);
+    box-shadow: 0 5px 20px rgba(255, 107, 129, 0.28);
 }
 
 .skip-btn {
-    background: linear-gradient(135deg, #b98cff 0%, #ff8aa0 100%);
+    background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-color) 100%);
     color: white;
 }
 
@@ -323,7 +323,7 @@
 }
 
 .continue-btn {
-    background: linear-gradient(135deg, #ff5f7e 0%, #ff8aa0 100%);
+    background: linear-gradient(135deg, var(--theme-color) 0%, var(--theme-light) 100%);
     color: white;
     margin-top: 20px;
     margin-left: auto;
@@ -491,7 +491,7 @@
 }
 
 .streak-display {
-    background: linear-gradient(135deg, #ffb86c 0%, #ff5f7e 100%);
+    background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-color) 100%);
     color: white;
     padding: 8px 20px;
     border-radius: 20px;
@@ -505,7 +505,7 @@
 }
 
 .streak-display.high-streak {
-    background: linear-gradient(135deg, #b98cff 0%, #ff5f7e 100%);
+    background: linear-gradient(135deg, var(--theme-light) 0%, var(--theme-color) 100%);
 }
 
 @keyframes pulse {

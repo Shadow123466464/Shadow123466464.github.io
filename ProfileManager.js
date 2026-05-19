@@ -324,6 +324,8 @@ var ProfileManager = {
 
     injectThemeStyles: function(color) {
         var lighterColor = this.lightenColorMethod(color, 20);
+        var darkerColor = this.lightenColorMethod(color, -15);
+        var veryLightColor = this.lightenColorMethod(color, 35);
         var styleId = 'dynamic-theme-styles';
         var existing = document.getElementById(styleId);
         if (existing) existing.remove();
@@ -332,14 +334,29 @@ var ProfileManager = {
         style.id = styleId;
         style.textContent =
             ':root{--theme-color:' + color + ';}' +
-            '.step-btn.next-btn,.step-btn.finish-btn,.settings-save-btn,#closeModal{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;}' +
+            /* Main buttons */
+            '.step-btn.next-btn,.step-btn.finish-btn,.settings-save-btn,#closeModal,.paper button,#secretLetterButton,#wordleReplayButton,.wordle-replay-button,.return-button,.preview-button{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;color:#fff !important;}' +
+            '.paper button:hover,#secretLetterButton:hover,#wordleReplayButton:hover,.wordle-replay-button:hover,.return-button:hover,.preview-button:hover{background:linear-gradient(135deg,' + darkerColor + ' 0%,' + color + ' 100%) !important;transform:scale(1.05) !important;}' +
+            /* Wordle buttons */
+            '.wordle-btn{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;color:white !important;}' +
+            '.wordle-btn:hover{transform:translateY(-2px) !important;box-shadow:0 5px 20px ' + this.hexToRgba(color, 0.32) + ' !important;}' +
+            '.continue-btn{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;color:white !important;}' +
+            '.continue-btn:hover{transform:translateY(-2px) !important;box-shadow:0 5px 20px ' + this.hexToRgba(color, 0.32) + ' !important;}' +
+            '.hint-btn{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;color:white !important;}' +
+            '.hint-btn:hover{transform:translateY(-2px) !important;box-shadow:0 5px 20px ' + this.hexToRgba(color, 0.32) + ' !important;}' +
+            '.skip-btn{background:linear-gradient(135deg,' + lighterColor + ' 0%,' + color + ' 100%) !important;color:white !important;}' +
+            '.skip-btn:hover{transform:translateY(-2px) !important;box-shadow:0 5px 20px ' + this.hexToRgba(color, 0.32) + ' !important;}' +
+            /* Text selections and accents */
             '.profile-streak{color:' + color + ' !important;}' +
             '.settings-tab.active{color:' + color + ' !important;border-bottom-color:' + color + ' !important;}' +
             '.option-btn.selected,.scroll-option.selected{border-color:' + color + ' !important;background:' + color + ' !important;color:white !important;}' +
-            '.option-card.selected{border-color:' + color + ' !important;background:rgba(255,107,129,0.08) !important;}' +
-            '.form-group input:focus{border-color:' + color + ' !important;box-shadow:0 0 0 3px rgba(255,107,129,0.18) !important;}' +
-            '.stat-value,.settings-header h2 i,.preview-heart{color:' + color + ' !important;}' +
-            '.preview-button,#secretLetterButton,#wordleReplayButton,.wordle-replay-button,.return-button{background:linear-gradient(135deg,' + color + ' 0%,' + lighterColor + ' 100%) !important;color:#fff !important;}';
+            '.option-card.selected{border-color:' + color + ' !important;background:' + this.hexToRgba(color, 0.08) + ' !important;}' +
+            '.form-group input:focus{border-color:' + color + ' !important;box-shadow:0 0 0 3px ' + this.hexToRgba(color, 0.18) + ' !important;}' +
+            '.stat-value,.settings-header h2 i,.preview-heart,.wordle-title,.typewriter-cursor{color:' + color + ' !important;}' +
+            '.wordle-tile.filled{border-color:' + color + ' !important;}' +
+            '.key:hover{background:' + veryLightColor + ' !important;}' +
+            '.heart-icon{color:' + color + ' !important;}'
+            ;
         document.head.appendChild(style);
     },
 
@@ -350,6 +367,13 @@ var ProfileManager = {
         var G = (num >> 8 & 0x00FF) + amt;
         var B = (num & 0x0000FF) + amt;
         return '#' + (0x1000000 + (R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 + (G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 + (B < 255 ? (B < 1 ? 0 : B) : 255)).toString(16).slice(1);
+    },
+
+    hexToRgba: function(hex, alpha) {
+        var r = parseInt(hex.slice(1, 3), 16);
+        var g = parseInt(hex.slice(3, 5), 16);
+        var b = parseInt(hex.slice(5, 7), 16);
+        return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
     },
 
     incrementLettersOpened: function() {

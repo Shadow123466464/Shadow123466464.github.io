@@ -9,6 +9,9 @@
     --setup-muted: #715365;
     --setup-border: rgba(255, 95, 126, 0.2);
     --setup-shadow: rgba(99, 38, 70, 0.18);
+    --theme-color: #ff6b81;
+    --theme-light: #ff8aa0;
+    --theme-dark: #ff5266;
 }
 
 .profile-setup-overlay {
@@ -577,7 +580,7 @@
 .profile-streak {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
-    color: #ff6b81;
+    color: var(--theme-color);
     font-weight: 600;
 }
 
@@ -666,7 +669,7 @@
 }
 
 .settings-header h2 i {
-    color: #ff6b81;
+    color: var(--theme-color);
 }
 
 .settings-close {
@@ -681,7 +684,7 @@
 }
 
 .settings-close:hover {
-    color: #ff6b81;
+    color: var(--theme-color);
     background: rgba(255, 107, 129, 0.1);
 }
 
